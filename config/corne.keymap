@@ -46,7 +46,7 @@
             bindings = <
 &trans  &kp LS(NUMBER_1)  &kp LS(NUMBER_2)  &kp LS(NUMBER_3)  &kp LS(N)      &trans          &bt BT_SEL 4  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_CLR
 &trans  &kp NUMBER_1      &kp NUMBER_2      &kp NUMBER_3      &kp NUMBER_4   &kp NUMBER_5    &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &trans
-&trans  &trans            &trans            &kp N             &kp KP_SLASH   &trans          &trans        &trans        &trans        &trans        &trans        &trans
+&trans  &trans            &trans            &kp N             &kp KP_SLASH   &trans          &trans        &kp DOT       &trans        &trans        &trans        &trans
                                             &trans            &kp LS(SPACE)  &trans          &trans        &trans        &trans
             >;
         };

@@ -304,6 +304,7 @@
         <text x="12.8" y="20.6" class="level2">H</text>
         <text x="38.0" y="43.4" class="sym">!</text>
         <text x="38.0" y="43.4" class="nav text">F8</text>
+        <text x="12.8" y="43.4" class="num">,</text>
       </g>
     </g>
 
