@@ -27,14 +27,34 @@
             // │GUI│ Z │ X │ - │ V │ B │       │ . │ H │ G │ , │ K │Alt│
             // └───┴───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┴───┘
             //             ┌───┬───┬───┐       ┌───┬───┬───┐
-            //             │Del│   │Bsp│       │Sft│Agr│Esc│
+            //             │Del│   │Bsp│       │Sft│Sym│Esc│
             //             └───┴───┴───┘       └───┴───┴───┘
 
             bindings = <
-&kp CAPSLOCK  &kp EL_Q  &kp EL_C  &kp EL_O          &kp EL_P     &kp EL_W                  &kp EL_J        &kp EL_M       &kp EL_D      &kp EL_1DK   &kp EL_Y  &kp LCTRL
-&kp TAB       &kp EL_A  &kp EL_S  &kp EL_E          &kp EL_N     &kp EL_F                  &kp EL_L        &kp EL_R       &kp EL_T      &kp EL_I     &kp EL_U  &kp ENTER
-&kp LEFT_GUI  &kp EL_Z  &kp EL_X  &kp EL_MINS       &kp EL_V     &kp EL_B                  &kp EL_DOT      &kp EL_H       &kp EL_G      &kp EL_COMM  &kp EL_K  &kp LEFT_ALT
-                                  &mt LCTRL DELETE  &lt 1 SPACE  &mt LEFT_ALT BACKSPACE    &kp LEFT_SHIFT  &kp RIGHT_ALT  &lt 2 ESCAPE
+&kp CAPSLOCK  &kp EL_Q  &kp EL_C  &kp EL_O          &kp EL_P     &kp EL_W                  &kp EL_J        &kp EL_M  &kp EL_D      &kp EL_1DK   &kp EL_Y  &kp LCTRL
+&kp TAB       &kp EL_A  &kp EL_S  &kp EL_E          &kp EL_N     &kp EL_F                  &kp EL_L        &kp EL_R  &kp EL_T      &kp EL_I     &kp EL_U  &kp ENTER
+&kp LEFT_GUI  &kp EL_Z  &kp EL_X  &kp EL_MINS       &kp EL_V     &kp EL_B                  &kp EL_DOT      &kp EL_H  &kp EL_G      &kp EL_COMM  &kp EL_K  &kp LEFT_ALT
+                                  &mt LCTRL DELETE  &lt 2 SPACE  &mt LEFT_ALT BACKSPACE    &kp LEFT_SHIFT  &mo 1     &lt 3 ESCAPE
+            >;
+        };
+
+        Sym {
+            // ┌───┬───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┬───┐
+            // │   │ ^ │ < │ > │ $ │ % │       │ @ │ & │ * │ ' │ ` │   │
+            // ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
+            // │   │ { │ ( │ ) │ } │ = │       │ \ │ + │ - │ / │ " │   │
+            // ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
+            // │   │ ~ │ [ │ ] │ _ │ # │       │ | │ ! │ ; │ : │ ? │   │
+            // └───┴───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┴───┘
+            //             ┌───┬───┬───┐       ┌───┬───┬───┐
+            //             │   │   │   │       │   │   │   │
+            //             └───┴───┴───┘       └───┴───┴───┘
+
+            bindings = <
+&trans  &kp EL_CIRC  &kp EL_LABK  &kp EL_RABK  &kp EL_DLR   &kp EL_PERC    &kp EL_AT    &kp EL_AMPR  &kp EL_ASTR  &kp EL_QUOT  &kp EL_GRV   &trans
+&trans  &kp EL_LCBR  &kp EL_LPRN  &kp EL_RPRN  &kp EL_RCBR  &kp EL_EQL     &kp EL_BSLS  &kp EL_PLUS  &kp EL_MINS  &kp EL_SLSH  &kp EL_DQUO  &trans
+&trans  &kp EL_TILD  &kp EL_LBRC  &kp EL_RBRC  &kp EL_UNDS  &kp EL_HASH    &kp EL_PIPE  &kp EL_EXLM  &kp EL_SCLN  &kp EL_COLN  &kp EL_QUES  &trans
+                                  &trans       &trans       &trans         &trans       &trans       &trans
             >;
         };
 
