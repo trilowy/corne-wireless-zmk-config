@@ -8,6 +8,8 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
+#include "ergol_aliases.h"
+
 &lt { quick-tap-ms = <200>; };
 
 &mt { quick-tap-ms = <200>; };
@@ -17,26 +19,36 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-            // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-            // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-            //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+            // ┌───┬───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┬───┐
+            // │Cap│ Q │ C │ O │ P │ W │       │ J │ M │ D │ ★ │ Y │Ctl│
+            // ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
+            // │Tab│ A │ S │ E │ N │ F │       │ L │ R │ T │ I │ U │Ent│
+            // ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
+            // │GUI│ Z │ X │ - │ V │ B │       │ . │ H │ G │ , │ K │Alt│
+            // └───┴───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┴───┘
+            //             ┌───┬───┬───┐       ┌───┬───┬───┐
+            //             │Del│   │Bsp│       │Sft│Agr│Esc│
+            //             └───┴───┴───┘       └───┴───┴───┘
 
             bindings = <
-&kp CAPSLOCK  &kp Q  &kp W  &kp E             &kp R        &kp T                     &kp Y            &kp U          &kp I         &kp O    &kp P     &kp LCTRL
-&kp TAB       &kp A  &kp S  &kp D             &kp F        &kp G                     &kp H            &kp J          &kp K         &kp L    &kp SEMI  &kp ENTER
-&kp LEFT_GUI  &kp Z  &kp X  &kp C             &kp V        &kp B                     &kp N            &kp M          &kp COMMA     &kp DOT  &kp FSLH  &kp LEFT_ALT
-                            &mt LCTRL DELETE  &lt 1 SPACE  &mt LEFT_ALT BACKSPACE    &kp RIGHT_SHIFT  &kp RIGHT_ALT  &lt 2 ESCAPE
+&kp CAPSLOCK  &kp EL_Q  &kp EL_C  &kp EL_O          &kp EL_P     &kp EL_W                  &kp EL_J        &kp EL_M       &kp EL_D      &kp EL_1DK   &kp EL_Y  &kp LCTRL
+&kp TAB       &kp EL_A  &kp EL_S  &kp EL_E          &kp EL_N     &kp EL_F                  &kp EL_L        &kp EL_R       &kp EL_T      &kp EL_I     &kp EL_U  &kp ENTER
+&kp LEFT_GUI  &kp EL_Z  &kp EL_X  &kp EL_MINS       &kp EL_V     &kp EL_B                  &kp EL_DOT      &kp EL_H       &kp EL_G      &kp EL_COMM  &kp EL_K  &kp LEFT_ALT
+                                  &mt LCTRL DELETE  &lt 1 SPACE  &mt LEFT_ALT BACKSPACE    &kp LEFT_SHIFT  &kp RIGHT_ALT  &lt 2 ESCAPE
             >;
         };
 
         Nav {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-            // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
+            // ┌───┬───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┬───┐
+            // │   │   │   │ ⎀ │ ⎙ │⌃⌫ │       │ ⇱ │ ⇟ │ ⇞ │ ⇲ │   │   │
+            // ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
+            // │   │⏯  │⏮  │🕪  │🕩  │⏭  │       │ ← │ ↓ │ ↑ │ → │   │   │
+            // ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
+            // │F1 │F2 │F3 │F4 │F5 │F6 │       │F7 │F8 │F9 │F10│F11│F12│
+            // └───┴───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┴───┘
+            //             ┌───┬───┬───┐       ┌───┬───┬───┐
+            //             │   │   │   │       │   │   │   │
+            //             └───┴───┴───┘       └───┴───┴───┘
 
             bindings = <
 &trans  &kp ESCAPE        &trans          &kp INSERT       &kp PRINTSCREEN    &kp LC(BACKSPACE)    &kp HOME  &kp PAGE_DOWN  &kp PAGE_UP  &kp END    &trans   &trans
@@ -47,11 +59,22 @@
         };
 
         Num {
+            // ┌───┬───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┬───┐
+            // │   │ € │ « │ » │ : │   │       │   │   │   │   │   │   │
+            // ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
+            // │   │ 1 │ 2 │ 3 │ 4 │ 5 │       │ 6 │ 7 │ 8 │ 9 │ 0 │   │
+            // ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
+            // │   │   │   │ . │ / │   │       │   │ , │   │   │   │   │
+            // └───┴───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┴───┘
+            //             ┌───┬───┬───┐       ┌───┬───┬───┐
+            //             │   │ ⍽ │   │       │   │   │   │
+            //             └───┴───┴───┘       └───┴───┴───┘
+
             bindings = <
-&trans  &kp LS(NUMBER_1)  &kp LS(NUMBER_2)  &kp LS(NUMBER_3)  &kp LS(N)      &trans          &bt BT_SEL 4  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_CLR
-&trans  &kp NUMBER_1      &kp NUMBER_2      &kp NUMBER_3      &kp NUMBER_4   &kp NUMBER_5    &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &trans
-&trans  &trans            &trans            &kp N             &kp KP_SLASH   &trans          &trans        &kp DOT       &trans        &trans        &trans        &trans
-                                            &trans            &kp LS(SPACE)  &trans          &trans        &trans        &trans
+&trans  &kp EL_EURO  &kp EL_LDAQ  &kp EL_RDAQ  &kp EL_COLN   &trans      &bt BT_SEL 4  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_CLR
+&trans  &kp EL_1     &kp EL_2     &kp EL_3     &kp EL_4      &kp EL_5    &kp EL_6      &kp EL_7      &kp EL_8      &kp EL_9      &kp EL_0      &trans
+&trans  &trans       &trans       &kp EL_DOT   &kp KP_SLASH  &trans      &trans        &kp EL_COMM   &trans        &trans        &trans        &trans
+                                  &trans       &kp EL_NNBS   &trans      &trans        &trans        &trans
             >;
         };
     };
